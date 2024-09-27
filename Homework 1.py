@@ -37,7 +37,7 @@ plt.show()
 # 3. 3D Plot with chosen Features
 from mpl_toolkits.mplot3d import Axes3D
 fig = plt.figure()
-ax = Axes3D(fig)
+ax = fig.add_subplot(111, projection='3d')
 
 X = Iris_data[:,0]
 Y = Iris_data[:,1]
