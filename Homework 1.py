@@ -41,10 +41,29 @@ ax = fig.add_subplot(111, projection='3d')
 
 X = Iris_data[:,0]
 Y = Iris_data[:,1]
-Z = Iris_data[:,4]
+Z = Iris_data[:,-1]
 ax.scatter(X,Y,Z)
 ax.set_xlabel('Sepal_length')
 ax.set_ylabel('Sepal_width')
 ax.set_zlabel('class')
+plt.suptitle('3D Plotting', fontsize = 16)
+plt.show()
+
+# 4. Feature 합성
+# Sepal_Length * Sepal_Width 가로와 세로를 곱한 넓이에 해당하는 새로운 Feature
+Sepal_Surface = Iris_data[:,0] * Iris_data[:,1]
+New_Iris_data = np.insert(Iris_data,-2,Sepal_Surface,axis=1)
+print(Iris_data.shape)
+print(New_Iris_data.shape)
+
+fig = plt.figure()
+ax = fig.add_subplot(111,projection='3d')
+X = New_Iris_data[:,0]
+Y = New_Iris_data[:,1]
+Z = New_Iris_data[:,-2]
+ax.scatter(X,Y,Z)
+ax.set_xlabel('Sepal_length')
+ax.set_ylabel('Sepal_width')
+ax.set_zlabel('Sepal_Surface')
 plt.suptitle('3D Plotting', fontsize = 16)
 plt.show()
