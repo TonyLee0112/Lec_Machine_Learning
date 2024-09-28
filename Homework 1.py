@@ -54,8 +54,6 @@ plt.show()
 # Sepal_Length * Sepal_Width 가로와 세로를 곱한 넓이에 해당하는 새로운 Feature
 Sepal_Surface = Iris_data[:,0] * Iris_data[:,1]
 New_Iris_data = np.insert(Iris_data,-2,Sepal_Surface,axis=1)
-print(Iris_data.shape)
-print(New_Iris_data.shape)
 
 fig = plt.figure()
 ax = fig.add_subplot(111,projection='3d')
