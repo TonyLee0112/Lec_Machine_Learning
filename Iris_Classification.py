@@ -12,7 +12,7 @@ Iris_target = Iris_data[:,4]
 
 # 2. input 과 target 을 train_set 과 test_set 으로 나누기
 from sklearn.model_selection import train_test_split
-train_input, test_input, train_target, test_target = train_test_split(Iris_input,Iris_target,random_state=42)
+train_input, test_input, train_target, test_target = train_test_split(Iris_input,Iris_target)
 
 # 3. Data Preprocessing
 from sklearn.preprocessing import StandardScaler
