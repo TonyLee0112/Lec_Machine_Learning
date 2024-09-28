@@ -63,8 +63,6 @@ plt.show()
 # Petal_width 는 데이터의 범위가 0~2.5 인 반면에, Petal Length는 0~7 이라 반경이 더 넓음.
 # 넓은 애를 더 키울까 아니면 좁은 애를 더 키울까?
 # Data Preprocessing vs Feature Engineering?
-# Data Preprocessing 은 SVM, Logistic Regression, K-Nearest Neighbor, 신경망에서 유리
-# Feature Engineering 은 Classification, 특성쌍의 비종속성을 반영하는데 유리
 
 # 4. Feature 합성
 i = 2; j = 3
