@@ -27,25 +27,26 @@ for key,value in Correlations.items() :
     print(key,f"{value:.2f}") # 실제 값은 변하지 않고 print 형식만 조정
 
 # 2-2. Choose one optimal Feature pair
-# 상관계수의 크기가 가장 작은 ('Sepal_length', 'Sepal_width') 쌍
+# 상관계수의 크기가 가장 작은 쌍
+i = 0; j = 1
 plt.title("Chosen Features")
-plt.scatter(Iris_data[:,0],Iris_data[:,1])
-plt.xlabel('Sepal_length')
-plt.ylabel('Sepal_width')
+plt.scatter(Iris_data[:,i],Iris_data[:,j])
+plt.xlabel(Feature_names[i])
+plt.ylabel(Feature_names[j])
 plt.show()
 
 # 3. 3D Plot with chosen Features
 from mpl_toolkits.mplot3d import Axes3D
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-
-X = Iris_data[:,0]
-Y = Iris_data[:,1]
+i = 1; j = 3
+X = Iris_data[:,i]
+Y = Iris_data[:,j]
 Z = Iris_data[:,-1]
 ax.scatter(X,Y,Z)
-ax.set_xlabel('Sepal_length')
-ax.set_ylabel('Sepal_width')
-ax.set_zlabel('class')
+ax.set_xlabel(Feature_names[i])
+ax.set_ylabel(Feature_names[j])
+ax.set_zlabel(Feature_names[-1])
 plt.suptitle('3D Plotting', fontsize = 16)
 plt.show()
 
