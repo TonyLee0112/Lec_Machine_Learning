@@ -66,7 +66,14 @@ plt.show()
 
 # 4. Feature 합성
 i = 2; j = 3
-New_Feature = Iris_data[:,i] / Iris_data[:,j]
+def Enlarge_Diff(x, y):
+    # 두 개의 numpy array A, B 를 받아서 계산
+    Separating_line = 0.52 * x + 0.06
+    Enlarge_diff = (y - Separating_line) * 100  # Difference from the line and scaled
+    return Enlarge_diff
+
+# Calculate the new feature
+New_Feature = Enlarge_Diff(Iris_data[:, 1], Iris_data[:, 3])
 New_Iris_data = np.insert(Iris_data,-1,New_Feature,axis=1)
 
 fig = plt.figure()
