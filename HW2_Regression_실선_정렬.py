@@ -63,10 +63,10 @@ lr.fit(poly_train_input,train_target)
 
 train_predict = lr.predict(poly_train_input)
 
-# Train_set 의 예측값을 초록색 실선으로 그리기 전에, input 값에 맞게 정렬
-sorted_idx = np.argsort(train_input[:, 0])
-sorted_train_input = train_input[sorted_idx]
-sorted_train_predict = train_predict[sorted_idx]
+# Train_set 의 예측값을 초록색 실선으로 그리기 위해, 꼬이지 않도록 정렬
+sorted_index = np.argsort(train_input[:, 0])
+sorted_train_input = train_input[sorted_index]
+sorted_train_predict = train_predict[sorted_index]
 
 # 실선으로 예측값 표시
 plt.plot(sorted_train_input, sorted_train_predict, color='green', label=f'train_set Order ={opt_order}')
